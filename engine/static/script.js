@@ -41,7 +41,6 @@ function init() {
             boardDiv.appendChild(cell)
         }
     }
-
     hideWinLine()
 }
 
@@ -63,7 +62,14 @@ async function playerMove(r, c, cell) {
         drawWinLine(winCells)
 
         setTimeout(() => {
-            showModal("🎉 Bạn thắng! 🏆")
+            showModal(`
+            <div class="modal-title-row">
+            <span>🎉</span>
+            <span>Bạn thắng!</span>
+            <span>🏆</span>
+            </div>
+            <div class="modal-subtext">Giỏi đấy!!</div>
+            `)
             if (currentWinCells) {
                 setTimeout(() => drawWinLine(currentWinCells), 50)
             }
@@ -79,6 +85,7 @@ async function playerMove(r, c, cell) {
         return
     }
 
+    await new Promise(resolve => setTimeout(resolve, 100))
     const res = await fetch(`${API}/move`, {
         method: "POST",
         headers: {
@@ -104,7 +111,14 @@ async function playerMove(r, c, cell) {
         drawWinLine(winCells)
 
         setTimeout(() => {
-            showModal("🎉 AI thắng! 🏆")
+            showModal(`
+                <div class="modal-title-row">
+                <span>🤖</span>
+                <span>AI thắng!</span>
+                <span>😈</span>
+                </div>
+                <div class="modal-subtext">lêu lêu con gà !!</div>
+            `)
             if (currentWinCells) {
                 setTimeout(() => drawWinLine(currentWinCells), 50)
             }
@@ -125,7 +139,6 @@ async function playerMove(r, c, cell) {
 }
 
 function checkWin(player) {
-    // 5 hàng
     for (let r = 0; r < SIZE; r++) {
         let row = []
         for (let c = 0; c < SIZE; c++) {
@@ -138,7 +151,6 @@ function checkWin(player) {
         if (row) return row
     }
 
-    // 5 cột
     for (let c = 0; c < SIZE; c++) {
         let col = []
         for (let r = 0; r < SIZE; r++) {
@@ -151,7 +163,6 @@ function checkWin(player) {
         if (col) return col
     }
 
-    // chéo chính
     let diag1 = []
     for (let i = 0; i < SIZE; i++) {
         if (board[i][i] !== player) {
@@ -162,7 +173,6 @@ function checkWin(player) {
     }
     if (diag1) return diag1
 
-    // chéo phụ
     let diag2 = []
     for (let i = 0; i < SIZE; i++) {
         if (board[i][SIZE - 1 - i] !== player) {
@@ -257,7 +267,7 @@ async function aiFirstMove() {
 }
 
 function showModal(text) {
-    document.getElementById("modalText").innerText = text
+    document.getElementById("modalText").innerHTML = text
     document.getElementById("winModal").style.display = "flex"
 }
 
@@ -302,7 +312,6 @@ function startGame() {
         document.getElementById("turn").innerText = "AI đi trước 🤖"
         aiFirstMove()
     }
-
     document.getElementById("startBtn").style.display = "none"
 }
 
