@@ -41,8 +41,8 @@ Docker
 
 # Quick Start
 ```bash
-git clone https://github.com/pnlhaiIT/caro-ai.git
-cd caro-ai
+git clone git@github.com:pnlhaiIT/caro-5x5.git
+cd engine
 docker compose up --build
 ```
 
