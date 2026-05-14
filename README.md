@@ -30,11 +30,11 @@ CARO-AI
 ---
 
 # Technologies Used
-Python
-Flask
-JavaScript
-HTML
-CSS
+Python<br>
+Flask<br>
+JavaScript<br>
+HTML<br>
+CSS<br>
 Docker
 
 ---
@@ -54,7 +54,8 @@ http://localhost:5050
 
 #  Author
 
-Student project demonstrating classical Artificial Intelligence techniques in board-game search.<br>
+Student project demonstrating classical Artificial Intelligence techniques.<br>
+Base của repo caro 10x10
 Phạm Nguyễn Long Hải
 
 ---
