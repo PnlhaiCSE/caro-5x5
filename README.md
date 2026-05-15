@@ -41,10 +41,11 @@ Docker
 
 # Quick Start
 ```bash
-git clone git@github.com:pnlhaiIT/caro-5x5.git
-#tạo .venv
-cd engine
-python3 app.py
+git clone 'url'
+cd caro-5x5
+docker compose up -d --build
+
+#tạo .venv nếu không run docker
 ```
 
 Then open:
