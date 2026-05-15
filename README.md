@@ -42,8 +42,8 @@ Docker
 # Quick Start
 ```bash
 git clone git@github.com:pnlhaiIT/caro-5x5.git
+#tạo .venv
 cd engine
-//tạo .venv
 python3 app.py
 ```
 
