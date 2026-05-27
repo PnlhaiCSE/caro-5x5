@@ -29,6 +29,13 @@ CARO-AI
 ```
 ---
 
+# Algorithm
+Dễ (99.99%): Random
+Trung bình (50%): depth=2
+Khó (bất khả thi): depth=3 + heuristic tối ưu
+
+---
+
 # Technologies Used
 Python<br>
 Flask<br>
