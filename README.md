@@ -64,7 +64,6 @@ http://localhost:5050
 #  Author
 
 Student project demonstrating classical Artificial Intelligence techniques.<br>
-Base của repo caro 10x10.<br>
 Phạm Nguyễn Long Hải
 
 ---
